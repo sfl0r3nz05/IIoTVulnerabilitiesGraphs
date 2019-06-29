@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TM</title>
+</head>
+
+<!-- Styles -->
+<style>
+    html{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #chartdiv {
+      width: 35%;
+      height: 95vh;
+    }
+</style>
+    
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+<body>
+     <!-- HTML -->
+     <div id="chartdiv"></div>
+</body>
+</html>
+
+
+    <!-- Chart code -->
+<script>
+  var texto = "TM";
+  var datos = [
+    {
+      "id": 1,
+      "name": "Bluetooth",
+      "Low": 26,
+      "Medium": 89,
+      "High": 58,
+      "Critical": 15,
+      "Total": "188"
+    },
+    {
+      "id": 2,
+      "name": "ZigBee",
+      "Low": 0,
+      "Medium": 6,
+      "High": 2,
+      "Critical": 1,
+      "Total": "9"
+    },
+    {
+      "id": 3,
+      "name": "RFID/NFC",
+      "Low": 4,
+      "Medium": 11,
+      "High": 8,
+      "Critical": 0,
+      "Total": "23"
+    },
+    {
+      "id": 4,
+      "name": "MQTT",
+      "Low": 9,
+      "Medium": 15,
+      "High": 4,
+      "Critical": 3,
+      "Total": "31"
+    },
+    {
+      "id": 5,
+      "name": "CoAP",
+      "Low": 1,
+      "Medium": 3,
+      "High": 1,
+      "Critical": 0,
+      "Total": "5 "
+    },
+    {
+      "id": 6,
+      "name": "REST/HTTP",
+      "Low": 29,
+      "Medium": 102,
+      "High": 61,
+      "Critical": 15,
+      "Total": "207"
+    },
+    {
+      "id": 7,
+      "name": "JMS",
+      "Low": 1,
+      "Medium": 16,
+      "High": 4,
+      "Critical": 8,
+      "Total": "29"
+    },
+    {
+      "id": 8,
+      "name": "AMQP",
+      "Low": 11,
+      "Medium": 33,
+      "High": 12,
+      "Critical": 1,
+      "Total": "57"
+    },
+    {
+      "id": 9,
+      "name": "DDS",
+      "Low": 3,
+      "Medium": 0,
+      "High": 0,
+      "Critical": 0,
+      "Total": "3 "
+    },
+    {
+      "id": 10,
+      "name": "XMPP",
+      "Low": 6,
+      "Medium": 63,
+      "High": 15,
+      "Critical": 2,
+      "Total": "86"
+    },
+    {
+      "id": 11,
+      "name": "WebSocket",
+      "Low": 8,
+      "Medium": 33,
+      "High": 17,
+      "Critical": 4,
+      "Total": "62"
+    },
+    {
+      "id": 12,
+      "name": "Modbus",
+      "Low": 1,
+      "Medium": 20,
+      "High": 14,
+      "Critical": 5,
+      "Total": "40"
+    },
+    {
+      "id": 13,
+      "name": "Siemens S7",
+      "Low": 6,
+      "Medium": 34,
+      "High": 6,
+      "Critical": 0,
+      "Total": "46"
+    },
+    {
+      "id": 14,
+      "name": "EtherNet/IP",
+      "Low": 2,
+      "Medium": 9,
+      "High": 8,
+      "Critical": 3,
+      "Total": "22"
+    },
+    {
+      "id": 15,
+      "name": "Hart/IP",
+      "Low": 1,
+      "Medium": 2,
+      "High": 2,
+      "Critical": 0,
+      "Total": "5"
+    },
+    {
+      "id": 16,
+      "name": "PROFINET",
+      "Low": 0,
+      "Medium": 22,
+      "High": 5,
+      "Critical": 3,
+      "Total": "30"
+    },
+    {
+      "id": 17,
+      "name": "BACnet",
+      "Low": 3,
+      "Medium": 7,
+      "High": 4,
+      "Critical": 2,
+      "Total": "16 "
+    },
+    {
+      "id": 18,
+      "name": "Niagara AX",
+      "Low": 0,
+      "Medium": 6,
+      "High": 1,
+      "Critical": 0,
+      "Total": "7 "
+    },
+    {
+      "id": 19,
+      "name": "OPC-DA",
+      "Low": 8,
+      "Medium": 28,
+      "High": 13,
+      "Critical": 3,
+      "Total": "52"
+    },
+    {
+      "id": 20,
+      "name": "OPC-UA",
+      "Low": 2,
+      "Medium": 8,
+      "High": 6,
+      "Critical": 0,
+      "Total": "16"
+    },
+    {
+      "id": 21,
+      "name": "DNP3",
+      "Low": 5,
+      "Medium": 46,
+      "High": 5,
+      "Critical": 2,
+      "Total": "58"
+    },
+    {
+      "id": 22,
+      "name": "ANSI c12.22",
+      "Low": 0,
+      "Medium": 3,
+      "High": 0,
+      "Critical": 0,
+      "Total": "3"
+    },
+    {
+      "id": 23,
+      "name": "IEC61850",
+      "Low": 4,
+      "Medium": 13,
+      "High": 2,
+      "Critical": 0,
+      "Total": "19"
+    },
+    {
+      "id": 24,
+      "name": "IEC 104",
+      "Low": 0,
+      "Medium": 12,
+      "High": 3,
+      "Critical": 0,
+      "Total": "15"
+    },
+    {
+      "id": 25,
+      "name": "ICCP",
+      "Low": 2,
+      "Medium": 5,
+      "High": 0,
+      "Critical": 0,
+      "Total": "7"
+    }
+];   
+</script>
+  
+<script src="script.js"></script>
